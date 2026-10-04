@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5f0">
+  <meta name="description" content="عبيد مطيعة للبيع او الكراء السنوي .">
+  <title>سوق العبيد  | عبيد مطيعة</title>
+  <style>
+    :root {
+      --background: #f7f5f0;
+      --white: #ffffff;
+      --text: #28372f;
+      --muted: #70756f;
+      --green: #355342;
+      --green-dark: #263d31;
+      --gold: #b49361;
+      --border: #e6e2d9;
+      --page-width: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: auto; }
+    body {
+      width: 100%;
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--background);
+      color: var(--text);
+      font-family: Tahoma, Arial, sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; height: auto; }
+    button, input, select, textarea { font: inherit; }
+    .container { width: min(var(--page-width), calc(100% - 36px)); margin-inline: auto; }
+
+    .site-header { background: var(--white); border-bottom: 1px solid var(--border); }
+    .header-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .brand-mark {
+      width: 37px;
+      height: 37px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 21px;
+    }
+    .brand-name { display: block; font-size: 19px; font-weight: 700; line-height: 1.15; }
+    .brand-subtitle { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; }
+    .nav-links { display: flex; align-items: center; gap: 25px; margin: 0; padding: 0; list-style: none; }
+    .nav-links a { color: #515951; font-size: 13px; }
+    .nav-links a:hover { color: var(--green); }
+
+    .button {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 17px;
+      color: var(--white);
+      background: var(--green);
+      border: 1px solid var(--green);
+      border-radius: 4px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .button:hover { background: var(--green-dark); }
+
+    .intro { padding-block: 45px 40px; text-align: center; }
+    .eyebrow { margin: 0 0 9px; color: var(--gold); font-size: 12px; font-weight: 700; }
+    .intro h1 { margin: 0; font-size: clamp(32px, 5vw, 48px); font-weight: 500; line-height: 1.45; }
+    .intro h1 span { color: var(--green); }
+    .intro p { max-width: 570px; margin: 10px auto 0; color: var(--muted); font-size: 14px; }
+
+    .products-section { padding-block: 34px 48px; background: var(--white); border-block: 1px solid var(--border); }
+    .section-heading { margin-bottom: 22px; }
+    .section-heading h2 { margin: 0; font-size: 27px; font-weight: 500; }
+    .section-heading p { margin: 5px 0 0; color: var(--muted); font-size: 13px; }
+    .products-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .product-card { min-width: 0; background: var(--white); border: 1px solid var(--border); }
+    .product-image { overflow: hidden; background: #eee9df; }
+    .product-image img { aspect-ratio: 4 / 5; object-fit: cover; }
+    .product-card:first-child .product-image img { object-position: center 28%; }
+    .product-card:nth-child(2) .product-image img { object-position: center 32%; }
+    .product-info { padding: 15px 16px 17px; }
+    .product-title-row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+    .product-title-row h3 { margin: 0; font-size: 18px; font-weight: 600; }
+    .price { flex-shrink: 0; color: var(--green); font-size: 12px; font-weight: 700; }
+    .product-description { min-height: 42px; margin: 6px 0 12px; color: var(--muted); font-size: 12px; }
+
+    .order-section { padding-block: 42px 50px; }
+    .order-box { padding: 23px; background: var(--white); border: 1px solid var(--border); }
+    .order-box h2 { margin: 0; font-size: 25px; font-weight: 500; }
+    .order-intro { margin: 5px 0 19px; color: var(--muted); font-size: 13px; }
+    .order-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .form-field { min-width: 0; display: flex; flex-direction: column; gap: 5px; color: var(--text); font-size: 12px; }
+    .form-field.wide { grid-column: 1 / -1; }
+    .form-field input, .form-field select, .form-field textarea {
+      width: 100%;
+      min-height: 43px;
+      padding: 9px 11px;
+      color: var(--text);
+      background: #fff;
+      border: 1px solid #d9d8d0;
+      border-radius: 3px;
+      text-align: right;
+    }
+    .form-field textarea { min-height: 75px; resize: vertical; }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: 2px solid rgba(53, 83, 66, .18); border-color: var(--green); }
+    .form-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 3px; }
+    .form-actions .button { min-height: 45px; }
+    .form-note { margin: 0; color: var(--muted); font-size: 11px; }
+
+    .site-footer { padding-block: 16px; color: #d9ded9; background: var(--green-dark); font-size: 11px; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+    .footer-inner p { margin: 0; }
+
+    @media (max-width: 700px) {
+      .container { width: min(calc(100% - 30px), 540px); }
+      .header-inner { min-height: auto; flex-wrap: wrap; gap: 8px 15px; padding-block: 10px; }
+      .nav-links { order: 3; width: 100%; justify-content: center; gap: 22px; padding-top: 8px; border-top: 1px solid var(--border); }
+      .nav-links a { font-size: 12px; }
+      .intro { padding-block: 32px 30px; }
+      .products-section { padding-block: 30px 36px; }
+      .products-grid { gap: 16px; }
+      .product-info { padding: 12px; }
+      .product-title-row { align-items: flex-start; flex-direction: column; gap: 2px; }
+      .product-description { min-height: 0; }
+      .order-box { padding: 18px; }
+    }
+    @media (max-width: 480px) {
+      .container { width: calc(100% - 26px); }
+      .nav-links { justify-content: space-between; gap: 8px; }
+      .nav-links a { font-size: 11px; }
+      .products-grid { grid-template-columns: 1fr; gap: 18px; }
+      .product-image img { aspect-ratio: 4 / 4.7; }
+      .product-title-row { align-items: baseline; flex-direction: row; }
+      .order-form { grid-template-columns: 1fr; gap: 12px; }
+      .form-field.wide, .form-actions { grid-column: 1; }
+      .form-actions { align-items: flex-start; flex-direction: column; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 3px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="home">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="، سوق العبيد">
+        <span class="brand-mark" aria-hidden="true">ل</span>
+        <span><span class="brand-name"> بلاصة هاد ل يجي لوگو ولاشي حاجة</span><span class="brand-subtitle">عبيد مطيعة</span></span>
+      </a>
+      <nav aria-label="القائمة الرئيسية">
+        <ul class="nav-links">
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#products">المعروضات للبيع</a></li>
+          <li><a href="#order">الطلب</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro container">
+      <p class="eyebrow">تشكيلة لمسة</p>
+      <h1>مرحباا بييك فسوق أفضل عبيد<br><span></span></h1>
+      <p>اختارالعبد المطيع ديالك كل وحدة عندها مواصفات ديالها والثمن اختر الضحية و نكمل الصفقة  </p>
+    </section>
+
+    <section class="products-section" id="products">
+      <div class="container">
+        <div class="section-heading">
+          <h2>المعروضات للبيع</h2>
+          <p>اختار العبد المطيع ديالك ونكملو الفصقة !</p>
+        </div>
+        <div class="products-grid">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="abaya-mustard.jpg" alt="    " loading="lazy">
+            </div>
+            <div class="product-info">
+              <div class="product-title-row">
+                <h3>دنيا المنسي 21 سنة</h3>
+                <span class="price">الثمن باش ما سخاك الله </span>
+              </div>
+              <p class="product-description"> كتفيق حتال 12:00 ولكن كتعرف طيب غير هي انا خارج المسؤولية الا مرضتي بالعصاب</p>
+              <a class="button" href="#order" data-product="عباية الخردل">للطلب</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="abaya-blue.jpg" alt="" loading="lazy">
+            </div>
+            <div class="product-info">
+              <div class="product-title-row">
+                <h3>سكينة الكيحل</h3>
+                <span class="price">الثمن نسول جواد ونرض عليك</span>
+              </div>
+              <p class="product-description">عندي احساس حتى هي فاقصة جواد ولكن اتكون كتعرف طيب حتى هي </p>
+              <a class="button" href="#order" data-product=" ">للطلب</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="order-section" id="order">
+      <div class="container order-box">
+        <h2>معلومات الطلب</h2>
+        <p class="order-intro">عمّري المعلومات، ومن بعد ضغطي على الزر باش تصيفطيها لينا فواتساب.</p>
+        <form class="order-form" id="order-form">
+          <label class="form-field">الاسم الكامل *
+            <input name="name" type="text" autocomplete="name" placeholder="الاسم الكامل" required>
+          </label>
+          <label class="form-field">رقم الهاتف ديالك *
+            <input name="customerPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="مثال: 06 أو 07..." required>
+          </label>
+          <label class="form-field">المدينة *
+            <input name="city" type="text" autocomplete="address-level2" placeholder="المدينة" required>
+          </label>
+          <label class="form-field">الموديل *
+            <select name="product" id="product-select" required>
+              <option value="">اختاري الموديل</option>
+              <option value="عباية الخردل">لعبايات هنا</option>
+              <option value="عباية ندى / */عباية ندى</option>
+            </select>
+          </label>
+          <label class="form-field">
+            <input name="size" type="text" placeholder="كتبي المقاس اللي بغيتي">
+          </label>
+          <label class="form-field">الكمية
+            <input name="quantity" type="number" min="1" max="10" value="1" required>
+          </label>
+          <label class="form-field wide">العنوان (اختياري)
+            <input name="address" type="text" autocomplete="street-address" placeholder="الحي أو العنوان للتوصيل">
+          </label>
+          <label class="form-field wide">ملاحظة (اختياري)
+            <textarea name="note" placeholder="أي معلومة إضافية بغيتي تزيديها"></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="button" type="submit">صيفطي الطلب عبر واتساب</button>
+            <p class="form-note"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© انضضحك وصاافي المهم هذا مثال بسيط واخة ماشي هاكة غادي يكون </p>
+      <p></p>
+    </div>
+  </footer>
+
+  <script>
+    // الرقم المحلي 0716300993 بصيغة واتساب الدولية: 212716300993
+    const WHATSAPP_NUMBER = "212716300993";
+    const productSelect = document.getElementById("product-select");
+
+    // زر كل موديل كيعمر الموديل فالفورم ويمشي مباشرة لخانة معلومات الطلب.
+    document.querySelectorAll("[data-product]").forEach((link) => {
+      link.addEventListener("click", () => {
+        productSelect.value = link.dataset.product;
+      });
+    });
+
+    document.getElementById("order-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      const message = [
+        "سلام، بغيت نطلب من متجر لمسة:",
+        `الاسم: ${data.get("name")}`,
+        `رقم الهاتف: ${data.get("customerPhone")}`,
+        `المدينة: ${data.get("city")}`,
+        `الموديل: ${data.get("product")}`,
+        `المقاس: ${data.get("size") || "ما تحددش"}`,
+        `الكمية: ${data.get("quantity")}`,
+        `العنوان: ${data.get("address") || "ما تحددش"}`,
+        `ملاحظة: ${data.get("note") || "ما كايناش"}`
+      ].join("\n");
+      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      window.location.href = whatsappUrl;
+    });
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a455f32b9edd0385',t:'MTc5MTEzNTM5Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
